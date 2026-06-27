@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./sytles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./assets/super-mario.png" type="image/x-icon">
     <title>Mario Bros</title>
 </head>
@@ -14,21 +15,26 @@
     <div class="header">
         <img src="./assets/logo-header.png" alt="logo-mario">
         <a href="./index.html">Home</a>
-        <a href="nossos-servicos.html">Nossos Serviços</a>
-        <a href="">Fale Conosco</a>
+        <a href="nossos-servicos.html">Serviços</a>
+        <a href="./jogo.html">Experiência</a>
+        <a href="https://api.whatsapp.com/send/?phone=5512997621990&text&type=phone_number&app_absent=0" target="_blank">Contato</a>
 
     </div>
     <div class="caixa-mae">
         <div class="caixa-principal">
             <img src="./assets/logo.png" alt="logo-mario-bros" class="logo-mario">
             <h1>&#x1F527; Encanadores Mario & Luigi - Resolvendo Seus Problemas Hidráulicos! &#x1F527;</h1>
-            <p>Você já se encontrou em uma situação de emergência com encanamento? <br>Vazamentos
-                inesperados, canos entupidos ou torneiras que não param de pingar?<br> Não se preocupe,
+            <p>Você já se encontrou em uma situação de emergência com encanamento? <br><br>Vazamentos
+                inesperados, canos entupidos ou torneiras que não param de pingar?<br><br> Não se preocupe,
                 porque estamos aqui para salvar o dia! Apresentamos a vocês os encanadores mais famosos
                 do Reino dos Cogumelos - Mario e Luigi!
             </p>
 
-            <button class="button-contact" onclick="cliqueiNoBotao()">Entre em contato</button>
+            <div class="botoes-container">
+                <button class="button-contact" onclick="cliqueiNoBotao()">Entre em contato</button>
+                <a href="jogo.html" class="button-jogo">🎮 JOGAR SUPER MARIO BROS 🎮</a>
+            </div>
+
         </div>
 
         <div>
@@ -46,6 +52,7 @@
 
         <form class="formulario-fale-conosco" action="https://formcarry.com/s/NNm38bXdaBA" method="POST"
             enctype="multipart/form-data">
+            <button type="button" class="btn-fechar-form" onclick="fecharFormulario()">✖</button>
             <input placeholder="Seu nome" type="text" name="name">
             <input placeholder="Seu telefone" type="tel" name="telefone">
             <textarea placeholder="Digite seu problema aqui..." name="duvida"></textarea>

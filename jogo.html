@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/super-mario.png" type="image/x-icon">
+    <title>Jogar Super Mario - Caio Ikegami</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(#87CEEB, #87CEEB 80%, #C2B280);
+            font-family: 'Press Start 2P', cursive;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .game-header h1 {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .game-frame {
+            border: 8px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            background: #000;
+            max-width: 100%;
+            width: 900px;
+            height: 600px;
+            position: relative;
+        }
+
+        /* Estilo para o emulador */
+        #game {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #e0e0e0;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 3px solid #000;
+            font-size: 0.8em;
+            transition: all 0.3s;
+            box-shadow: 5px 5px 0px #000;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #fff;
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #000;
+        }
+
+        .controls {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            border: 3px solid #000;
+            max-width: 900px;
+            font-size: 0.7em;
+        }
+
+        .controls h3 {
+            margin-bottom: 10px;
+            color: #e52521;
+        }
+
+        .controls p {
+            margin: 5px 0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .game-header h1 {
+                font-size: 1.2em;
+            }
+
+            .game-frame {
+                width: 95%;
+                height: 400px;
+            }
+
+            .controls {
+                font-size: 0.5em;
+                width: 95%;
+            }
+        }
+
+        /* Container para controles + botão lado a lado */
+        .controles-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            max-width: 900px;
+        }
+
+        .controls {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            border: 3px solid #000;
+            font-size: 0.7em;
+        }
+
+        .controls h3 {
+            margin-bottom: 10px;
+            color: #e52521;
+        }
+
+        .controls p {
+            margin: 5px 0;
+            color: #000;
+        }
+
+        .back-button {
+            margin-top: 0;
+            /* Remove margem superior */
+            padding: 15px 30px;
+            background: #e0e0e0;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 3px solid #000;
+            font-size: 0.8em;
+            transition: all 0.3s;
+            box-shadow: 5px 5px 0px #000;
+            cursor: pointer;
+            height: fit-content;
+            align-self: center;
+        }
+
+        .back-button:hover {
+            background: #fff;
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #000;
+        }
+
+        /* Responsivo para mobile */
+        @media (max-width: 768px) {
+            .controles-container {
+                flex-direction: column;
+                align-items: center;
+                width: 95%;
+            }
+
+            .controls {
+                font-size: 0.5em;
+                width: 100%;
+            }
+
+            .back-button {
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🎮 SUPER MARIO BROS 🎮</h1>
+        </div>
+
+        <div class="game-frame">
+            <div id="game"></div>
+        </div>
+        <div class="controles-container">
+            <div class="controls">
+                <h3>🎯 CONTROLES:</h3>
+                <p>⬅️ ➡️ Setas: Mover</p>
+                <p>⬆️ Seta pra cima: Olhar para cima</p>
+                <p>🦖 X: Pular</p>
+                <p>🏃 S: Correr/Pegar item</p>
+                <p>🌀 Z: Giro (com capa)</p>
+                <p>⏸️ Enter: Pausar</p>
+                <p>💾 Use o menu (☰) para salvar</p>
+            </div>
+
+            <a href="index.html" class="back-button">⬅️ VOLTAR AO SITE</a>
+        </div>
+    </div>
+
+    <!-- EmulatorJS -->
+    <script>
+        EJS_player = "#game";
+        EJS_core = "snes"; // Core para NES (Super Mario Bros)
+        EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+        // URL da ROM do Super Mario Bros
+        EJS_gameUrl = "./assets/supermarioworld.sfc";
+
+        // Configurações opcionais
+        EJS_color = "#e52521"; // Cor tema Mario
+        EJS_startOnLoaded = true; // Iniciar automaticamente
+        EJS_biosUrl = ""; // Não necessário para NES
+    </script>
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+
+</html>
