@@ -46,11 +46,18 @@
         </a>
 
         <form class="formulario-fale-conosco" action="https://formcarry.com/s/NNm38bXdaBA" method="POST"
-            enctype="multipart/form-data">
+            enctype="multipart/form-data" onsubmit="return validarFormulario(event)">
+
             <button type="button" class="btn-fechar-form" onclick="fecharFormulario()">✖</button>
-            <input placeholder="Seu nome" type="text" name="name">
-            <input placeholder="Seu telefone" type="tel" name="telefone">
-            <textarea placeholder="Digite seu problema aqui..." name="duvida"></textarea>
+
+            <input placeholder="Seu nome" type="text" name="name" id="nome" required minlength="3">
+
+            <input placeholder="Seu telefone" type="tel" name="telefone" id="telefone" required
+                pattern="[0-9\s\-\(\)]{10,15}" title="Digite um telefone válido">
+
+            <textarea placeholder="Digite seu problema aqui..." name="duvida" id="duvida" required minlength="10"
+                rows="4"></textarea>
+
             <button class="button-form" type="submit">Pedir Orçamento</button>
         </form>
     </div>
