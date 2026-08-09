@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 h1 {
     color: #ffffff;
     font-size: 25px;
@@ -151,6 +156,28 @@ p {
     cursor: pointer;
 }
 
+.button-contact2 {
+    display: block;
+    margin: 0 auto;
+    font-family: 'Press Start 2P', cursive;
+    padding: 15px 30px;
+    background: #e0e0e0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 3px solid #000;
+    font-size: 0.8em;
+    transition: all 0.3s;
+    box-shadow: 5px 5px 0px #000;
+    cursor: pointer;
+}
+
+.button-contact2:hover {
+    background: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #000;
+}
+
 .logo-mario {
     height: 200px;
     margin-left: 250px;
@@ -287,6 +314,34 @@ textarea {
     width: 200px;
 }
 
+.footer {
+    display: block;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #c51111;
+}
+
+.footer a:hover {
+    color: #0761F0;
+    transition: 0.2s ease-in-out;
+}
+
+#cogumelo {
+    position: fixed;
+    width: 50px;
+    height: auto;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    z-index: 9999;
+}
+
+
 .servicos {
     color: #ffffff;
     margin-top: 50px;
@@ -350,6 +405,7 @@ textarea:valid:not(:placeholder-shown) {
     border: 2px solid #e52521 !important;
 }
 
+
 /*  RESPONSIVO TELAS MENORES  **************************************/
 
 @media (max-width: 1630px) {
@@ -400,6 +456,14 @@ textarea:valid:not(:placeholder-shown) {
     .img-mario-luigi {
         height: 400px;
     }
+
+    .footer {
+        display: block;
+        align-items: flex-end;
+        justify-content: center;
+        text-decoration: none;
+    }
+
 }
 
 /*  RESPONSIVO CELULARES  **************************************/
@@ -476,6 +540,14 @@ textarea:valid:not(:placeholder-shown) {
     }
 
     .button-contact {
+        font-family: 'Press Start 2P', cursive;
+        display: flex;
+        justify-content: center;
+        margin: 25px;
+        padding: 15px;
+    }
+
+    .button-contact2 {
         font-family: 'Press Start 2P', cursive;
         display: flex;
         justify-content: center;

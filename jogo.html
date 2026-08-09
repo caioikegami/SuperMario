@@ -13,6 +13,18 @@
             box-sizing: border-box;
         }
 
+        #cogumelo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: auto;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+            z-index: 9999;
+        }
+
         body {
             background: linear-gradient(#87CEEB, #87CEEB 80%, #C2B280);
             font-family: 'Press Start 2P', cursive;
@@ -225,6 +237,8 @@
             <a href="index.html" class="back-button">⬅️ VOLTAR AO SITE</a>
         </div>
     </div>
+      <img src="./assets/cogumelo.png" id="cogumelo" alt="Cogumelo">
+      <script src="./scripts.js"></script>
 
     <!-- EmulatorJS -->
     <script>
@@ -240,6 +254,10 @@
         EJS_biosUrl = ""; // Não necessário para NES
     </script>
     <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+   
+
+    
 </body>
 
 </html>

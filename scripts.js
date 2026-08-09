@@ -2,6 +2,42 @@ const formulario = document.querySelector(".formulario-fale-conosco")
 const mascara = document.querySelector(".mascara-formulario")
 const mediaQuery = window.matchMedia("(max-width: 1100px)")
 
+const cogumelo = document.getElementById('cogumelo');
+
+// Posição atual do cogumelo na tela
+let posX = 0;
+let posY = 0;
+
+// Posição real do cursor do mouse
+let mouseX = 0;
+let mouseY = 0;
+
+// Velocidade do atraso (quanto menor o número, mais lento/suave é o movimento)
+const atraso = 0.08;
+
+// Atualiza as coordenadas do mouse quando ele se move
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Função que roda continuamente para calcular a aproximação suave
+function animar() {
+    // Fórmula do LERP: posição atual + (distância até o mouse * fator de atraso)
+    posX += (mouseX - posX) * atraso;
+    posY += (mouseY - posY) * atraso;
+
+    // Aplica a nova posição no elemento HTML
+    cogumelo.style.left = `${posX}px`;
+    cogumelo.style.top = `${posY}px`;
+
+    // Chama o próximo frame da animação
+    requestAnimationFrame(animar);
+}
+
+// Inicia a animação
+animar();
+
 function cliqueiNoBotao() {
     if (mediaQuery.matches) {
         // MOBILE - Centralizado
