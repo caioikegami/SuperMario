@@ -579,32 +579,38 @@ textarea:valid:not(:placeholder-shown) {
     .caixa-mae2 {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         gap: 0px;
-        padding: 0px;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
     }
 
     .img-luigi {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 10px 180px;
+        margin: 10px auto;
         padding: 0px;
         width: 60px;
     }
 
     .servicos {
-        margin: 0px;
-        margin-left: 0px;
-        margin-right: 40px;
-        ;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .servicos h1 {
+        font-size: 28px;
+        width: 100%;
+        word-wrap: break-word;
     }
 
     .servicos p {
         display: flex;
+        justify-content: center;
         align-items: center;
-        margin-left: 60px;
+        margin-left: 0;
         font-size: 18px;
         text-align: center;
     }
